@@ -40,16 +40,20 @@ For each task in the plan:
 After every **3 tasks**, pause and show:
 
 ```
-## Progress: [N/Total] tasks complete
+## Progress: 3/12 tasks complete
 
 ✅ Task 1: [description]
 ✅ Task 2: [description]
 ✅ Task 3: [description]
-⬜ Task 4: [description] (next)
-...
+⬜ Task 4: [description] ← next
+⬜ Task 5: [description]
+⬜ Task 6: [description]
+... (list ALL remaining tasks)
 
 Ready for next batch, or any feedback?
 ```
+
+Always show **every task** in the checklist (completed + remaining). Use the actual task count for progress (e.g., `3/12`, `6/12`).
 
 Wait for user before continuing.
 
