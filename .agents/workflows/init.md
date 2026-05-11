@@ -42,7 +42,7 @@ List top 3 levels of the project tree. Identify:
 
 ### 5. Auto-Fill Config
 
-Update `.new-agent/rules/project-config.md` with detected values.
+Update `.agents/rules/project-config.md` with detected values.
 - Only fill empty fields
 - Never overwrite user-set values
 - Present the detected config to the user before applying
