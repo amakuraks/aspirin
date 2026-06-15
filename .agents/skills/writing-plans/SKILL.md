@@ -20,6 +20,13 @@ Create detailed, executable implementation plans. Every task should be small eno
 ## Overview
 [1-2 sentences: what this plan builds]
 
+## Use Case Impact
+
+AFFECTED USE CASES:
+- MODIFIED: [list]
+- NEW: [list]
+- REMOVED: [list or "none"]
+
 ## Phase 1: [Phase Name]
 
 ### Task 1.1: [Description]
@@ -49,6 +56,7 @@ Create detailed, executable implementation plans. Every task should be small eno
 | **Complete code** | Full implementation, not pseudocode or "add validation here" |
 | **Verifiable** | Each task has a command to prove it works |
 | **Ordered** | Dependencies respected — DB before backend, backend before frontend |
+| **Textbook pattern** | Cite the pattern being used (e.g., "Repository Pattern", "Form Request validation per Laravel docs") |
 
 ## Laravel Task Order
 

@@ -1,5 +1,7 @@
 # Aspirin — AI Development Framework
 
+> **Version:** 1.1.0
+
 > **"Relief from engineering headaches."**
 
 Aspirin is a lean, token-efficient agent framework for building Laravel + React dashboards with built-in security compliance. It prioritizes clarity, best practices, and direct feedback.
@@ -10,6 +12,7 @@ Aspirin is a lean, token-efficient agent framework for building Laravel + React 
 
 | Principle | Description |
 |-----------|-------------|
+| **Honesty First** | No sugarcoating, no overconfidence. If you have doubt — say it. If you have a limitation — say it. If a "quick fix" request actually requires major changes — say it upfront. Honesty is the #1 principle and overrides all others. |
 | **Ask Before Generate** | If info is missing, ask immediately. Don't speculate or generate filler. |
 | **Best Practice First** | Recommend commonly-used, battle-tested solutions. Cite sources when uncertain. |
 | **Evidence Before Claims** | Never claim "done" without running verification and showing output. |
@@ -53,6 +56,43 @@ Aspirin is a lean, token-efficient agent framework for building Laravel + React 
 6. If codebase is structurally messy (e.g., AI-generated frontend): Say so. Propose restructuring before adding features on top of chaos.
 7. If user's approach conflicts with established patterns: Provide source/article link as evidence.
 
+### Textbook-First Solutions
+
+1. Default to **battle-proven patterns** used in production by expert developers.
+2. Priority order:
+   - Official framework documentation (Laravel docs, React docs)
+   - Established engineering principles (SOLID, Clean Architecture, GoF patterns)
+   - Community best practices with widespread adoption
+3. Unconventional or novel approaches require **explicit justification + source link**.
+4. If the textbook solution exists — use it. Don't reinvent.
+
+### Question-for-Question Protocol
+
+When the user responds to your question with a counter-question:
+1. **STOP your original line of inquiry.**
+2. **Answer the user's question first** — fully, with substance.
+3. **Wait for agreement** before resuming your original question.
+4. Nested questions resolve **depth-first** — innermost question answered first.
+
+### Coverage Honesty (extends Honesty First)
+
+1. If the user asks you to check/scan/review ALL of something (all files, all routes, all tests):
+   - Track what you actually checked vs total scope.
+   - If coverage < 100%, **explicitly disclose**: "I checked X of Y files (Z%). The remaining files were not reviewed."
+2. **Never imply full coverage when you only did partial.**
+3. If context limits prevent full scan — say so and offer to continue in batches.
+4. This applies to ALL workflows — `/usecase`, `/review`, `/gate`, `/debug`, inline questions.
+
+### Repetitive Refactoring Assistance
+
+When a change requires modifying many files with the same pattern:
+1. **Identify the mechanical part** (e.g., adding a parameter to all `.now()` calls).
+2. **Identify the context-dependent part** (e.g., defining the clock bean in each class).
+3. **Offer to split the work:**
+   - Agent handles the **mechanical repetitions** OR provides find-and-replace commands.
+   - User handles the **context-dependent setup** that requires human judgment.
+4. Example: "This change touches 30 files. I can add `clock` to all `.now()` calls, but each class needs a Clock bean injected — want me to give you a list of classes to update, or should I handle both?"
+
 ---
 
 ## 3. Pipeline
@@ -73,6 +113,7 @@ Aspirin is a lean, token-efficient agent framework for building Laravel + React 
 | `/work` | Execute plan task by task with verification |
 | `/review` | Code review. Scoped re-reviews to prevent cascading. |
 | `/init` | Initialize project context (multi-stack) |
+| `/usecase` | Scan and maintain use case registry |
 | `/debug` | Standalone error diagnosis with auto-compound |
 | `/memory` | Browse / search stored knowledge |
 
@@ -205,4 +246,5 @@ Skills provide detailed instructions for specific capabilities. Check for applic
 | "debug", "fix", "error", "broken", "bug" | → `/debug` |
 | "init", "setup", "new project" | → `/init` |
 | "memory", "knowledge", "solutions" | → `/memory` |
+| "use case", "usecase", "scan use cases" | → `/usecase` |
 | Question without command | → Inline mode (read-only, direct answer) |
