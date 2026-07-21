@@ -40,14 +40,21 @@ List top 3 levels of the project tree. Identify:
 - Config/infra (.github/, docker/)
 - Documentation (docs/, README)
 
-### 5. Auto-Fill Config
+### 5. Detect Tooling
+
+- Run `rtk --version` (or `where rtk` / `which rtk`).
+- Found → propose `rtk_available: true`. Not found → `rtk_available: false`.
+- Detection only proposes — the value is written in step 6 after user confirms the presented config (PATH hit ≠ user chose to install it).
+- Never fail /init over this — rtk is optional.
+
+### 6. Auto-Fill Config
 
 Update `.agents/rules/project-config.md` with detected values.
 - Only fill empty fields
 - Never overwrite user-set values
 - Present the detected config to the user before applying
 
-### 6. Present Results
+### 7. Present Results
 
 ```
 ## Project Detected
@@ -60,6 +67,7 @@ Update `.agents/rules/project-config.md` with detected values.
 | Styling | Tailwind CSS |
 | Database | MySQL |
 | Auth | Sanctum |
+| rtk | available / not found |
 
 Config changes: [show diff]
 
