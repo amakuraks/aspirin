@@ -40,6 +40,7 @@ build_command: ""
 git_workflow: "branch"         # branch | none
 default_branch: "main"
 tdd_mode: "balanced"           # strict | balanced | relaxed
+rtk_available: ""              # true | false — auto-detected by /init
 ```
 
 ## Auto-Detect

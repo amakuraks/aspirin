@@ -1,6 +1,7 @@
 # Aspirin — AI Development Framework
 
 > **"Relief from engineering headaches."**
+> Version: 1.1.0
 
 Aspirin is a lean, token-efficient agent framework for building Laravel + React dashboards with built-in security compliance. It prioritizes clarity, best practices, and direct feedback.
 
@@ -16,6 +17,7 @@ Aspirin is a lean, token-efficient agent framework for building Laravel + React 
 | **Plan Before Code** | Brainstorm → Plan → Gate → then code. No jumping ahead. |
 | **Knowledge Compounds** | Solved problems auto-save to `docs/solutions/` for future reference. |
 | **Fix Root Cause** | If A integrates with B because C is broken — fix C. Say so directly. |
+| **Clarity Over Cleverness** | Reusability, readability, uniformity > runtime efficiency. Applies to code AND design decisions. Optimize only against a measured bottleneck. |
 
 ---
 
@@ -124,6 +126,33 @@ These rules apply to ALL workflows and inline mode:
 | **No guidance sections** | Don't print "When to Use / When to Skip" |
 | **Ask, don't guess** | If missing info → ask. Don't generate 500 tokens of speculation. |
 | **Don't narrate actions** | Don't say "I'll now analyze..." — just do it. |
+| **Caveman style** | ALL output: drop filler words, articles, hedges. Keep technical terms, identifiers, code exact. |
+| **rtk wrapper** | If `rtk_available: true` in project-config → prefix supported shell commands with `rtk`. Skip silently if unavailable. |
+
+### Caveman Style Examples
+
+| ❌ Prose | ✅ Caveman |
+|---------|-----------|
+| "I noticed that there seems to be an N+1 query issue in the controller" | "Found N+1 in `UserController::index`. Fix: eager load `orders`." |
+| "Let me now go ahead and run the tests to verify" | "Running tests." |
+| "It looks like the migration might be missing a foreign key constraint" | "Migration missing FK on `user_id`. Add `constrained()`." |
+| "This could potentially cause issues if the user is not authenticated" | "Breaks when unauthenticated. Guard with `auth` middleware." |
+
+### rtk Command Support
+
+| Wrap with rtk | Do NOT wrap |
+|---------------|-------------|
+| `git status`, `git diff`, `git log` | Interactive commands |
+| Directory listings (`ls`) | Commands piped to files |
+| Test runners (`npm test`, `phpunit`, `pest`) | One-line-output commands (no gain) |
+| Linters, build output | Anything rtk errors on — fall back to bare command |
+
+### Context Hygiene
+
+- **Trigger points:** every CONTINUE gate + `/work` batch checkpoints.
+- **Mechanism:** estimate context fill from session signals — files read, workflow phases completed, transcript length. Zero tool calls.
+- **Action:** estimate ≥60% → print one line: `⚠️ Context ~60%+. Run /compact before continuing.`
+- **Note:** estimate is approximate (±10%) — a nudge, not a measurement. May fire between 50–70%. Never block on it.
 
 ---
 
