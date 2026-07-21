@@ -1,6 +1,7 @@
 # Aspirin 💊
 
 > **"Relief from engineering headaches."**
+> **Version 1.1.0**
 
 Aspirin is a lean, token-efficient AI development framework for **Antigravity IDE**. Built for developers who build Laravel + React dashboards (and beyond), it enforces security compliance, best-practice architecture, and honest feedback — without the bloat.
 
@@ -22,19 +23,23 @@ Forked and reshaped from [Super Compound](https://github.com/aultramen/super-com
 | ⛔ **CONTINUE Gate** | Every workflow stops at the end. No auto-advancing without permission. |
 | 📖 **TypeScript Helper** | Explains TS patterns for developers learning TypeScript |
 | 📚 **Source Citations** | Best-practice recommendations by default. Sources linked when uncertain. |
+| ⚠️ **Context Hygiene** | Nudges /compact when estimated context passes ~60% (checked at workflow gates) |
+| 🦴 **Caveman Output** | Terse output everywhere — filler dropped, technical terms exact |
+| 🗜️ **rtk Integration** | Wraps shell commands with rtk when installed — compressed tool output |
+| 🧭 **Clarity Over Cleverness** | Reusability, readability, uniformity > runtime efficiency |
 
 ---
 
 ## Installation
 
-Aspirin lives inside the `.agent/` directory of your project.
+Aspirin lives inside the `.agents/` directory of your project.
 
 ### Option A: Git Clone
 
 ```bash
 git clone https://github.com/amakuraks/aspirin.git
 cd /path/to/your-project
-cp -r /path/to/aspirin/.agent ./.agent
+cp -r /path/to/aspirin/.agents ./.agents
 ```
 
 **Windows (PowerShell):**
@@ -42,18 +47,18 @@ cp -r /path/to/aspirin/.agent ./.agent
 ```powershell
 git clone https://github.com/amakuraks/aspirin.git
 cd C:\path\to\your-project
-Copy-Item -Recurse "path\to\aspirin\.agent" -Destination ".\.agent" -Force
+Copy-Item -Recurse "path\to\aspirin\.agents" -Destination ".\.agents" -Force
 ```
 
 ### Option B: Manual Copy
 
-Copy the `.agent/` folder into your project root.
+Copy the `.agents/` folder into your project root.
 
 ### Project Structure After Installation
 
 ```
 your-project/
-├── .agent/
+├── .agents/
 │   ├── rules/                    ← Always-on constraints (2 files)
 │   │   ├── aspirin.md            ← Core philosophy, personality, token rules
 │   │   └── project-config.md    ← Tech stack config (auto-filled by /init)
