@@ -16,9 +16,9 @@ Review code from 7 perspectives with severity classification. Re-reviews are SCO
 | # | Perspective | What to Check |
 |---|-------------|---------------|
 | 1 | **Correctness** | Logic errors, null handling, off-by-one, error paths, edge cases |
-| 2 | **Design** | SRP violations, DRY violations, tight coupling, God classes/components, naming |
+| 2 | **Design** | SRP violations, DRY violations, tight coupling, God classes/components, naming, deviation from established project patterns (P2) |
 | 3 | **Security** | SQL injection, XSS, CSRF, auth bypass, secrets in code, mass assignment |
-| 4 | **Performance** | N+1 queries, missing eager loads, unnecessary loops, missing DB indexes, large payloads |
+| 4 | **Performance** | N+1 queries, missing eager loads, unnecessary loops, missing DB indexes, large payloads. Premature micro-optimization that hurts readability is ALSO a finding (P3) |
 | 5 | **Readability** | Unclear naming, deep nesting, unnecessary complexity, missing types |
 | 6 | **Testing** | Missing tests for critical paths, unreliable tests, missing edge case coverage |
 | 7 | **Architecture** | Business logic in controllers, API calls in components, layer violations |

@@ -131,6 +131,18 @@ function TransactionList() {
 
 ---
 
+## Uniformity Check
+
+Same feature type → same layer pattern across the codebase.
+
+| Check | Severity |
+|-------|----------|
+| CRUD feature deviates from existing CRUD structure (different layering, naming, file placement) | P2 |
+| New pattern introduced where an established one exists (e.g., second state-management approach, second HTTP wrapper) | P2 |
+| Same concern solved two different ways in two features | P3 |
+
+---
+
 ## Complexity Limits
 
 | Rule | Limit | Action |

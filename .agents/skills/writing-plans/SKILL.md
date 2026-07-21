@@ -49,6 +49,7 @@ Create detailed, executable implementation plans. Every task should be small eno
 | **Complete code** | Full implementation, not pseudocode or "add validation here" |
 | **Verifiable** | Each task has a command to prove it works |
 | **Ordered** | Dependencies respected — DB before backend, backend before frontend |
+| **Uniform** | Reuse existing patterns/components. No novel pattern where an established one exists. No perf shortcuts without measured need. |
 
 ## Laravel Task Order
 
