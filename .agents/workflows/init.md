@@ -44,7 +44,7 @@ List top 3 levels of the project tree. Identify:
 
 - Run `rtk --version` (or `where rtk` / `which rtk`).
 - Found → propose `rtk_available: true`. Not found → `rtk_available: false`.
-- Detection only proposes — the value is written in step 6 after user confirms the presented config (PATH hit ≠ user chose to install it).
+- Detection only proposes — the value is written after user confirms in step 7 (PATH hit ≠ user chose to install it).
 - Never fail /init over this — rtk is optional.
 
 ### 6. Auto-Fill Config

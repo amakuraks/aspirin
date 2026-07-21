@@ -51,10 +51,10 @@ After every **3 tasks**, pause and show:
 Ready for next batch, or any feedback?
 ```
 
-Wait for user before continuing.
-
 At each checkpoint, also estimate context fill. If ≥60% → append to the progress block:
 `⚠️ Context ~60%+. Run /compact before continuing.`
+
+Wait for user before continuing.
 
 ### 5. Quality Check
 
