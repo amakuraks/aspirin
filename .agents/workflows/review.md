@@ -13,7 +13,7 @@ description: "Multi-perspective code review. Scoped re-reviews prevent cascading
 
 ### 2. Review Perspectives
 
-Analyze from 7 angles:
+Analyze from 8 angles:
 
 | Perspective | Focus |
 |-------------|-------|
@@ -24,6 +24,7 @@ Analyze from 7 angles:
 | 📖 **Readability** | Naming clarity, code structure, unnecessary complexity |
 | 🧪 **Testing** | Coverage gaps, missing edge case tests, test reliability |
 | 🏛️ **Architecture** | Layer violations, dependency direction, separation of concerns |
+| 📋 **Use Cases** | Changes match declared affected use cases, no undeclared use case regressions |
 
 ### 3. Classify Findings
 
@@ -64,6 +65,10 @@ Structure: strengths first, then findings by severity.
 🟢 P3 Suggestion:
   #R3: [file:line] — [description]
        Fix: [specific fix]
+
+### Use Case Cross-Check
+- Do code changes match the declared `AFFECTED USE CASES` from the plan?
+- Flag any use case that appears impacted by code but was NOT listed.
 ```
 
 ---

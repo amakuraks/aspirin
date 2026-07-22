@@ -34,19 +34,33 @@ For each task in the plan:
 5. **Verify** — run the verification command from the plan.
 6. **Commit** — `git add` + `git commit -m "feat(scope): description"`
 7. **Mark complete** — check off the task.
+8. **Use case update** — if this task adds, removes, or modifies a use case:
+   - Update `docs/use-cases.md` with the change.
+   - Note: "📋 Updated use case: [use case name]"
+
+### 3.5 Repetitive Refactoring Check
+
+If a task requires the **same change across many files** (e.g., adding a parameter, renaming a method):
+1. Identify the mechanical vs context-dependent parts.
+2. Offer to split:
+   - "This needs the same change in N files. I'll handle [mechanical part]. Can you handle [context-dependent part]? Here's the list: ..."
+3. Provide specific find-and-replace patterns or file lists.
+4. Wait for user confirmation before proceeding.
 
 ### 4. Batch Checkpoints
 
 After every **3 tasks**, pause and show:
 
 ```
-## Progress: [N/Total] tasks complete
+## Progress: 3/12 tasks complete
 
 ✅ Task 1: [description]
 ✅ Task 2: [description]
 ✅ Task 3: [description]
-⬜ Task 4: [description] (next)
-...
+⬜ Task 4: [description] ← next
+⬜ Task 5: [description]
+⬜ Task 6: [description]
+... (list ALL remaining tasks)
 
 Ready for next batch, or any feedback?
 ```

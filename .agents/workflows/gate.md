@@ -1,10 +1,10 @@
 ---
-description: "Review plan before coding. 4 lenses: gap analysis, OWASP Top 10, ISO 27001, layered architecture. Never auto-patches."
+description: "Review plan before coding. 5 lenses: gap analysis, OWASP Top 10, ISO 27001, layered architecture, use case impact. Never auto-patches."
 ---
 
 # /gate — Plan Review
 
-Reviews the implementation plan through 4 security and quality lenses BEFORE any code is written. Catches issues in the plan — not in the code.
+Reviews the implementation plan through 5 security and quality lenses BEFORE any code is written. Catches issues in the plan — not in the code.
 
 ## Input
 
@@ -78,6 +78,16 @@ Check the plan addresses information security controls:
 - [ ] No business logic in JSX (compute in hook, render in component)
 - [ ] No direct API calls in components (use hooks or API client)
 
+### Lens 5: Use Case Impact
+
+Cross-reference the plan against `docs/use-cases.md`:
+
+- [ ] All affected use cases explicitly listed in the plan
+- [ ] No unlisted use cases are silently modified by the planned changes
+- [ ] New use cases have clear acceptance criteria
+- [ ] Removed use cases are intentional (not accidental side effects)
+- [ ] Test coverage plan addresses all affected use cases (unit + UAT)
+
 ## Output Format
 
 Present a consolidated report:
@@ -90,6 +100,7 @@ Present a consolidated report:
 │ OWASP     │ 9/10 │ ❌ #O4: ...                      │
 │ ISO 27001 │ 7/9  │ ❌ #I8: ... · ❌ #I9: ...       │
 │ Arch      │ 6/6  │ ✅ All passed                    │
+│ Use Cases │ 4/5  │ ❌ #U2: ...                      │
 └───────────┴──────┴──────────────────────────────────┘
 ```
 

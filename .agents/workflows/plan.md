@@ -12,6 +12,7 @@ description: "Create a comprehensive implementation plan. Always detailed. Detec
 - Scan existing codebase for patterns, conventions, and file structure.
 - If library/API docs needed → use `context7-docs` skill (before web search).
 - Check `docs/solutions/` for previously solved related problems.
+- Read `docs/use-cases.md` for existing use case registry.
 
 ### 2. Structure Check (Existing Codebases)
 
@@ -32,6 +33,17 @@ Include restructuring as **Phase 1** of the plan before any feature work.
 
 **Always comprehensive depth.** No quick/standard selector.
 
+Start the plan with a use case impact summary:
+
+```
+## Use Case Impact
+
+AFFECTED USE CASES:
+- MODIFIED: user login, user profile update
+- NEW: admin bulk import tracks
+- REMOVED: (none)
+```
+
 Structure the plan in phases:
 - **Phase 1** (if needed): Restructure existing code
 - **Phase 2**: Database layer (migrations, models, relationships)
@@ -44,6 +56,7 @@ Each task must include:
 - **Complete code** — not placeholders or pseudocode
 - **Verification** — command to run + expected output
 - **Single layer** — each task touches ONE layer (DB, backend, or frontend)
+- **Textbook pattern** — cite the pattern being used (e.g., "Repository Pattern", "Form Request validation per Laravel docs")
 
 **Laravel task order:** Migration → Model → Service → Controller → Route → FormRequest
 **React task order:** Type/Interface → API Client → Hook → Component → Page → Route

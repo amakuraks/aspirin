@@ -20,6 +20,13 @@ Create detailed, executable implementation plans. Every task should be small eno
 ## Overview
 [1-2 sentences: what this plan builds]
 
+## Use Case Impact
+
+AFFECTED USE CASES:
+- MODIFIED: [list]
+- NEW: [list]
+- REMOVED: [list or "none"]
+
 ## Phase 1: [Phase Name]
 
 ### Task 1.1: [Description]
