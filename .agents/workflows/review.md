@@ -71,6 +71,27 @@ Structure: strengths first, then findings by severity.
 - Flag any use case that appears impacted by code but was NOT listed.
 ```
 
+### Layman Explanation
+
+After the review results, give a **plain-language summary** of the review. Assume the reader is a smart non-developer (product owner, stakeholder, your future self).
+
+- **No jargon.** No "endpoint", "migration", "DTO", "N+1 query", "CSRF". Say "a spot where a user could see someone else's data", "the page loads slowly because it asks the database too many times".
+- **No framework names.** No "Laravel", "React", "TypeScript". Say "the backend", "the frontend".
+- **Explain WHY.** For each finding, one plain sentence on what happens if it's not fixed. "If we leave this, a user could delete another user's record."
+- **Tone matches severity but stays plain.** A critical issue is still called critical — just without jargon.
+
+Structure:
+
+```
+## What This Means (Plain English)
+
+- ✅ What's solid: ... (1–2 plain sentences)
+- ❌ What must be fixed: ... (plain translation of P1 findings, with why it matters)
+- ⚠️ What should be fixed: ... (plain translation of P2/P3 findings)
+```
+
+Keep it short — 5–10 lines. The full technical review is above. This section is the translation layer for everyone else.
+
 ---
 
 ## Re-Review (After Fixes) — SCOPED

@@ -11,6 +11,7 @@ description: "Execute implementation plan task by task. Incremental commits. Aut
 - Read the plan from `docs/plans/`.
 - If multiple plans exist, ask which one to execute.
 - Confirm understanding of all tasks before starting.
+- If the plan has NOT been explained yet (`/layman`), consider running it first — especially if the user or stakeholders need a plain-English view of what's being built. This is a suggestion, not a requirement: `/work` can proceed without it if the user prefers.
 
 ### 2. Setup
 

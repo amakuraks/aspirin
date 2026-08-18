@@ -62,10 +62,11 @@ your-project/
 │   ├── rules/                    ← Always-on constraints (2 files)
 │   │   ├── aspirin.md            ← Core philosophy, personality, token rules
 │   │   └── project-config.md    ← Tech stack config (auto-filled by /init)
-│   ├── workflows/                ← Slash commands (8 workflows)
+│   ├── workflows/                ← Slash commands (9 workflows)
 │   │   ├── brainstorm.md        ← Ask-first exploration
 │   │   ├── plan.md              ← Comprehensive implementation plan
 │   │   ├── gate.md              ← ⭐ Plan review: gaps + OWASP + ISO + architecture
+│   │   ├── layman.md            ← 🗣️ Plain-English plan explanation (after gate)
 │   │   ├── work.md              ← Execute plan task by task
 │   │   ├── review.md            ← Code review with scoped re-reviews
 │   │   ├── init.md              ← Project initialization (multi-stack)
@@ -107,13 +108,14 @@ Scans your codebase, detects the tech stack, and auto-fills `project-config.md`.
 /brainstorm    → Explore a feature idea (questions first, solutions later)
 /plan          → Create comprehensive implementation plan
 /gate          → Review plan for gaps, OWASP, ISO 27001, architecture
+/layman        → Plain-English explanation of the gated plan
 /work          → Execute plan task by task with TDD
 /review        → Code review with scoped re-reviews
 ```
 
 **Utilities:**
 
-```
+```bash
 /debug         → Diagnose and fix errors (standalone)
 /memory        → Browse stored knowledge from docs/solutions/
 /init          → Initialize or re-scan project
@@ -124,7 +126,7 @@ Scans your codebase, detects the tech stack, and auto-fills `project-config.md`.
 ## Core Pipeline
 
 ```
-/brainstorm → /plan → /gate → /work → /review
+/brainstorm → /plan → /gate → /layman → /work → /review
 ```
 
 Every step stops and waits for you. No auto-advancing.
@@ -133,9 +135,10 @@ Every step stops and waits for you. No auto-advancing.
 |-------|---------|-------------|
 | 💡 **Brainstorm** | `/brainstorm` | Ask-first exploration. Questions → options table → design chosen option → enhancement opportunities |
 | 📋 **Plan** | `/plan` | Comprehensive plan with exact file paths, complete code, and verification commands. Detects messy code and restructures first. |
-| 🛡️ **Gate** | `/gate` | Reviews plan through 4 lenses: gap analysis, OWASP Top 10, ISO 27001 Annex A, layered architecture. Presents findings — never auto-patches. |
+| 🛡️ **Gate** | `/gate` | Reviews plan through 4 lenses: gap analysis, OWASP Top 10, ISO 27001 Annex A, layered architecture. Presents findings — never auto-patches. Includes plain-English summary of what's planned and what was found. |
+| 🗣️ **Layman** | `/layman` | Translates the gated plan into plain English — no jargon, no framework names. Explains what gets built, what changes for the user, and why. |
 | ⚡ **Work** | `/work` | Executes plan task by task. TDD cycle, incremental commits, batch checkpoints every 3 tasks. |
-| 🔍 **Review** | `/review` | 7-perspective code review. P1/P2/P3 severity. Re-reviews are scoped to fixed items only. |
+| 🔍 **Review** | `/review` | 7-perspective code review. P1/P2/P3 severity. Re-reviews are scoped to fixed items only. Includes plain-English summary of findings. |
 
 ---
 
@@ -267,7 +270,7 @@ Violations are **P1 Critical** in code review.
 | Metric | Super Compound | Aspirin |
 |--------|---------------|---------|
 | Rule files | 3 | **2** |
-| Workflows | 22 (15 + 7 redirects) | **8** (all unique) |
+| Workflows | 22 (15 + 7 redirects) | **9** (all unique) |
 | Skills | 27 | **11** |
 | Agents | 5 | **0** |
 | Hooks | 3 | **0** |

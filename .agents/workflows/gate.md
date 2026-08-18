@@ -109,6 +109,31 @@ For each ❌ finding:
 - **What's missing**: Clear description
 - **Suggested fix**: What to add/change in the plan
 
+## Layman Explanation
+
+After the gate report, give a **plain-language summary** of the plan and the gate results. Assume the reader is a smart non-developer (product owner, stakeholder, your future self after a long weekend).
+
+- **No jargon.** No "OWASP", "ISO", "endpoint", "migration", "DTO", "CRUD". Say "security checklist", "a change to how the database stores data".
+- **No framework names.** No "Laravel", "React", "TypeScript". Say "the backend", "the frontend", "the server code".
+- **Explain WHY.** One plain sentence per finding: what breaks or gets risky if ignored. "If we skip this, a user could see someone else's private data."
+- **Use one analogy max per concept.** "This is like a checklist an inspector walks before a building is approved."
+
+Structure:
+
+```
+## What This Plan Does (Plain English)
+
+One or two sentences: what gets built and what it changes for the user.
+
+## What We Checked & Found
+
+- ✅ What's solid: ... (1–2 plain sentences)
+- ❌ What needs fixing: ... (plain translation of each finding, with why it matters)
+- ⚠️ What to watch later: ... (accepted risks / open questions, plain words)
+```
+
+Keep it short — 5–10 lines. The full technical report is above. This section is the translation layer for everyone else.
+
 ## Rules
 
 1. **NEVER auto-patch the plan.** Present findings and wait for user decision.
@@ -117,11 +142,12 @@ For each ❌ finding:
    - Only re-check the previously failed finding IDs
    - Do NOT discover new issues on items that already passed
    - User can force full re-scan with: `/gate full`
+4. The Layman Explanation must match the report exactly — no new findings, no softened language, no omissions. Translate, don't reinterpret.
 
 ## Handoff
 
 All passed:
-> "Gate passed ✅. Run `/work` when ready."
+> "Gate passed ✅. Run `/layman` for a plain-English explanation of what's planned, then `/work` when ready."
 
 Has failures:
 > "Gate found [N] issues. Review the findings above, patch the plan, then run `/gate` again."

@@ -100,7 +100,7 @@ When a change requires modifying many files with the same pattern:
 ## 3. Pipeline
 
 ```
-/brainstorm → /plan → /gate → /work → /review
+/brainstorm → /plan → /gate → /layman → /work → /review
 ```
 
 **Utilities:** `/init` · `/debug` · `/memory`
@@ -111,9 +111,10 @@ When a change requires modifying many files with the same pattern:
 |----------|---------|
 | `/brainstorm` | Ask-first exploration. Questions before solutions. |
 | `/plan` | Comprehensive implementation plan. Always detailed. |
-| `/gate` | Review plan: gap analysis + OWASP + ISO 27001 + architecture |
+| `/gate` | Review plan: gap analysis + OWASP + ISO 27001 + architecture. Includes plain-English summary. |
+| `/layman` | Plain-English explanation of the gated plan. Bridges `/gate` → `/work`. |
 | `/work` | Execute plan task by task with verification |
-| `/review` | Code review. Scoped re-reviews to prevent cascading. |
+| `/review` | Code review. Scoped re-reviews to prevent cascading. Includes plain-English summary. |
 | `/init` | Initialize project context (multi-stack) |
 | `/usecase` | Scan and maintain use case registry |
 | `/debug` | Standalone error diagnosis with auto-compound |
@@ -270,6 +271,7 @@ Skills provide detailed instructions for specific capabilities. Check for applic
 | "brainstorm", "explore", "idea", "what if" | → `/brainstorm` |
 | "plan", "design", "how to build" | → `/plan` |
 | "gate", "review plan", "check plan" | → `/gate` |
+| "layman", "explain plan", "plain english", "what are we building" | → `/layman` |
 | "build", "implement", "work", "code" | → `/work` |
 | "review", "check code", "look at this" | → `/review` |
 | "debug", "fix", "error", "broken", "bug" | → `/debug` |
