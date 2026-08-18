@@ -13,7 +13,7 @@ Explore feature ideas with **minimal token waste**. Ask questions first, generat
 
 ### Phase 1: UNDERSTAND (No Solutions)
 
-1. **Print version** — display: `> 💊 Aspirin v1.1.0`
+1. **Print version** — display: `> 💊 Aspirin v1.2.0`
 2. **Read the user's request** — identify what they want to build.
 2. **Scan codebase** — look for:
    - Existing implementations of similar features

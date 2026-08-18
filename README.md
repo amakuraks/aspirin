@@ -1,7 +1,7 @@
 # Aspirin 💊
 
 > **"Relief from engineering headaches."**
-> **Version 1.1.0**
+> **Version 1.2.0**
 
 Aspirin is a lean, token-efficient AI development framework for **Antigravity IDE**. Built for developers who build Laravel + React dashboards (and beyond), it enforces security compliance, best-practice architecture, and honest feedback — without the bloat.
 
