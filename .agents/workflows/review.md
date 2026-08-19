@@ -73,24 +73,30 @@ Structure: strengths first, then findings by severity.
 
 ### Layman Explanation
 
-After the review results, give a **plain-language summary** of the review. Assume the reader is a smart non-developer (product owner, stakeholder, your future self).
+After the review results, translate **each finding point by point** into plain language. Assume the reader is a smart non-developer (product owner, stakeholder, your future self). Do NOT summarize the review — translate every finding individually.
 
 - **No jargon.** No "endpoint", "migration", "DTO", "N+1 query", "CSRF". Say "a spot where a user could see someone else's data", "the page loads slowly because it asks the database too many times".
 - **No framework names.** No "Laravel", "React", "TypeScript". Say "the backend", "the frontend".
-- **Explain WHY.** For each finding, one plain sentence on what happens if it's not fixed. "If we leave this, a user could delete another user's record."
+- **One-to-one mapping.** Every finding in the review MUST appear here — same ID, same order, nothing merged or dropped.
+- **Explain WHY per finding.** For each finding, one plain sentence on what happens if it's not fixed. "If we leave this, a user could delete another user's record."
 - **Tone matches severity but stays plain.** A critical issue is still called critical — just without jargon.
 
-Structure:
+Structure — one block per finding:
 
 ```
-## What This Means (Plain English)
+#R1 — [plain translation of the finding]
+  → Why it matters: [plain sentence on the risk if not fixed]
 
-- ✅ What's solid: ... (1–2 plain sentences)
-- ❌ What must be fixed: ... (plain translation of P1 findings, with why it matters)
-- ⚠️ What should be fixed: ... (plain translation of P2/P3 findings)
+#R2 — [plain translation]
+  → Why it matters: [plain sentence]
+
+#R3 — [plain translation]
+  → Why it matters: [plain sentence]
+
+...
 ```
 
-Keep it short — 5–10 lines. The full technical review is above. This section is the translation layer for everyone else.
+Strengths and passed perspectives need no layman block. Only findings (P1/P2/P3) get translated. Keep each finding to 1–2 plain sentences. The full technical review is above — this section is the per-finding translation layer for everyone else.
 
 ---
 

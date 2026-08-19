@@ -111,28 +111,29 @@ For each ❌ finding:
 
 ## Layman Explanation
 
-After the gate report, give a **plain-language summary** of the plan and the gate results. Assume the reader is a smart non-developer (product owner, stakeholder, your future self after a long weekend).
+After the gate report, translate **each finding point by point** into plain language. Assume the reader is a smart non-developer (product owner, stakeholder, your future self after a long weekend). Do NOT summarize the report — translate every finding individually.
 
 - **No jargon.** No "OWASP", "ISO", "endpoint", "migration", "DTO", "CRUD". Say "security checklist", "a change to how the database stores data".
 - **No framework names.** No "Laravel", "React", "TypeScript". Say "the backend", "the frontend", "the server code".
-- **Explain WHY.** One plain sentence per finding: what breaks or gets risky if ignored. "If we skip this, a user could see someone else's private data."
-- **Use one analogy max per concept.** "This is like a checklist an inspector walks before a building is approved."
+- **One-to-one mapping.** Every finding in the report MUST appear here — same ID, same order, nothing merged or dropped.
+- **Explain WHY per finding.** For each finding, one plain sentence on what breaks or gets risky if ignored. "If we skip this, a user could see someone else's private data."
 
-Structure:
+Structure — one block per finding:
 
 ```
-## What This Plan Does (Plain English)
+#G1 — [plain translation of what's missing]
+  → Why it matters: [plain sentence on the risk if ignored]
 
-One or two sentences: what gets built and what it changes for the user.
+#O4 — [plain translation of the security gap]
+  → Why it matters: [plain sentence on the risk if ignored]
 
-## What We Checked & Found
+#I8 — [plain translation]
+  → Why it matters: [plain sentence]
 
-- ✅ What's solid: ... (1–2 plain sentences)
-- ❌ What needs fixing: ... (plain translation of each finding, with why it matters)
-- ⚠️ What to watch later: ... (accepted risks / open questions, plain words)
+...
 ```
 
-Keep it short — 5–10 lines. The full technical report is above. This section is the translation layer for everyone else.
+Passed lenses need no layman block. Only ❌ findings get translated. Keep each finding to 1–2 plain sentences. The full technical report is above — this section is the per-finding translation layer for everyone else.
 
 ## Rules
 
