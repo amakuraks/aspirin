@@ -104,36 +104,22 @@ Present a consolidated report:
 └───────────┴──────┴──────────────────────────────────┘
 ```
 
-For each ❌ finding:
-- **ID**: `#G1`, `#O4`, `#I8`, `#A2`, etc.
-- **What's missing**: Clear description
-- **Suggested fix**: What to add/change in the plan
-
-## Layman Explanation
-
-After the gate report, translate **each finding point by point** into plain language. Assume the reader is a smart non-developer (product owner, stakeholder, your future self after a long weekend). Do NOT summarize the report — translate every finding individually.
-
-- **No jargon.** No "OWASP", "ISO", "endpoint", "migration", "DTO", "CRUD". Say "security checklist", "a change to how the database stores data".
-- **No framework names.** No "Laravel", "React", "TypeScript". Say "the backend", "the frontend", "the server code".
-- **One-to-one mapping.** Every finding in the report MUST appear here — same ID, same order, nothing merged or dropped.
-- **Explain WHY per finding.** For each finding, one plain sentence on what breaks or gets risky if ignored. "If we skip this, a user could see someone else's private data."
-
-Structure — one block per finding:
+For each ❌ finding, present ONE combined block — technical + layman together:
 
 ```
-#G1 — [plain translation of what's missing]
-  → Why it matters: [plain sentence on the risk if ignored]
+❌ #O4 — A04 Insecure Design: [short title]
 
-#O4 — [plain translation of the security gap]
-  → Why it matters: [plain sentence on the risk if ignored]
+What's missing: [technical description]
+Layman issue: [plain translation of what's missing, and why it matters]
 
-#I8 — [plain translation]
-  → Why it matters: [plain sentence]
-
-...
+Suggested fix: [technical fix]
+Layman fix: [plain translation of the fix]
 ```
 
-Passed lenses need no layman block. Only ❌ findings get translated. Keep each finding to 1–2 plain sentences. The full technical report is above — this section is the per-finding translation layer for everyone else.
+Each block pairs technical detail with its layman translation:
+- **What's missing / Suggested fix** — technical, for the engineer
+- **Layman issue / Layman fix** — same content in plain language: no jargon, no framework names (say "the backend", "the frontend", not "Laravel", "React"), one plain sentence on why it matters. Written for a smart non-developer (product owner, stakeholder, future self).
+- **One-to-one mapping.** Every finding MUST have its layman pair — same ID, same order, nothing merged or dropped.
 
 ## Rules
 
@@ -143,7 +129,7 @@ Passed lenses need no layman block. Only ❌ findings get translated. Keep each 
    - Only re-check the previously failed finding IDs
    - Do NOT discover new issues on items that already passed
    - User can force full re-scan with: `/gate full`
-4. The Layman Explanation must match the report exactly — no new findings, no softened language, no omissions. Translate, don't reinterpret.
+4. Each finding's layman pair must match its technical block exactly — no new findings, no softened language, no omissions. Translate, don't reinterpret.
 
 ## Handoff
 
