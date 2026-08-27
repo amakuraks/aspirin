@@ -8,7 +8,7 @@ description: "Ask-first feature exploration. Questions before solutions. No wast
 
 ### Phase 1: UNDERSTAND
 
-1. **Print version** — display: `> 💊 Aspirin v1.2.0`
+1. **Print version** — display: `> 💊 Aspirin v1.3.0`
 2. Read the user's request.
 2. Scan codebase for relevant existing code, patterns, and conventions (if applicable).
 3. **Load use cases** — read `docs/use-cases.md` (if exists) to understand existing system behavior.
