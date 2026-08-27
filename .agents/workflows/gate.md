@@ -108,6 +108,7 @@ For each ❌ finding, present ONE combined block — technical + layman together
 
 ```
 ❌ #O4 — A04 Insecure Design: [short title]
+SONE: ✅ / ❌
 
 What's missing: [technical description]
 Layman issue: [plain translation of what's missing, and why it matters]
@@ -120,11 +121,41 @@ Each block pairs technical detail with its layman translation:
 - **What's missing / Suggested fix** — technical, for the engineer
 - **Layman issue / Layman fix** — same content in plain language: no jargon, no framework names (say "the backend", "the frontend", not "Laravel", "React"), one plain sentence on why it matters. Written for a smart non-developer (product owner, stakeholder, future self).
 - **One-to-one mapping.** Every finding MUST have its layman pair — same ID, same order, nothing merged or dropped.
+- **SONE** — mark each finding `SONE: ✅` or `SONE: ❌` (see below).
+
+## SONE Fixes
+
+**SONE** = **S**traightforward, **O**bvious, **N**o-brainer, **E**ffortless. Findings that can be taken out quickly — no design debate, no cross-cutting impact.
+
+### SONE Criteria (all must hold)
+
+| Criterion | Meaning |
+|-----------|---------|
+| **Straightforward** | Single clear action. No ambiguity about what to change. |
+| **Obvious** | The correct fix is self-evident. No alternatives worth weighing. |
+| **No-brainer** | No trade-offs, no risk of breaking other things, nobody could reasonably object. |
+| **Effortless** | Low effort, small change, no new architecture, no new dependencies. |
+
+### SONE Examples
+
+- **Use case needs updating** → update the affected use case in `docs/use-cases.md`. (Exception: if use cases haven't been generated yet, it's NOT SONE — flag, don't create a registry on the spot.)
+- **Logs currently store PII** → take PII out of the logs completely; or recommend storing it somewhere else / in a different (anonymized/hashed) form.
+- **Missing input validation on a simple endpoint** → add the validation rule (FormRequest).
+- **Missing migration rollback** → add the `down()` step.
+- **Missing test for a listed use case** → add the test that the plan already implies.
+- Any checklist item from the lenses with a single canonical fix.
+
+### SONE Handling
+
+1. For SONE findings: present the fix AND offer to apply it immediately: "SONE — want me to take this one out now?"
+2. **Wait for explicit user approval. Rule 1 stands: NEVER auto-patch.**
+3. SONE fixes can be applied immediately, before the rest of the plan is patched — gate report shrinks fast.
+4. Non-SONE findings keep the normal flow: patch plan → re-run `/gate` (scoped).
 
 ## Rules
 
-1. **NEVER auto-patch the plan.** Present findings and wait for user decision.
-2. **User decides** what to fix, what to accept as risk, what to skip.
+1. **NEVER auto-patch the plan** — including SONE fixes. Present findings and wait for user decision.
+2. **User decides** what to fix, what to accept as risk, what to skip. SONE findings can be taken out immediately on approval — before the rest of the plan is patched.
 3. After user patches the plan, re-run `/gate` — but **SCOPED**:
    - Only re-check the previously failed finding IDs
    - Do NOT discover new issues on items that already passed
