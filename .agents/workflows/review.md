@@ -34,6 +34,7 @@ Each finding gets:
   - 🔴 **P1 Critical** — Must fix. Bugs, security holes, data loss risks.
   - 🟡 **P2 Important** — Should fix. Design issues, missing edge cases, performance.
   - 🟢 **P3 Suggestion** — Nice to have. Style, naming, minor improvements.
+- **SONE** — is this a quick, obvious, low-effort fix? Mark `SONE: ✅` or `SONE: ❌` (see SONE Fixes below).
 
 ### 4. Tone Matches Severity
 
@@ -56,6 +57,7 @@ Structure: strengths first, then findings by severity. Each finding is ONE combi
 
 🔴 P1 Critical (must fix):
   #R1: [file:line] — [description]
+       SONE: ✅ / ❌
        What's wrong: [technical description]
        Layman issue: [plain translation, why it matters]
        Fix: [specific fix]
@@ -63,6 +65,7 @@ Structure: strengths first, then findings by severity. Each finding is ONE combi
 
 🟡 P2 Important (should fix):
   #R2: [file:line] — [description]
+       SONE: ✅ / ❌
        What's wrong: [technical description]
        Layman issue: [plain translation, why it matters]
        Fix: [specific fix]
@@ -70,6 +73,7 @@ Structure: strengths first, then findings by severity. Each finding is ONE combi
 
 🟢 P3 Suggestion:
   #R3: [file:line] — [description]
+       SONE: ✅ / ❌
        What's wrong: [technical description]
        Layman issue: [plain translation, why it matters]
        Fix: [specific fix]
@@ -84,6 +88,37 @@ Each block pairs technical detail with its layman translation:
 - **What's wrong / Fix** — technical, for the engineer
 - **Layman issue / Layman fix** — same content in plain language: no jargon (no "endpoint", "migration", "DTO", "N+1", "CSRF"), no framework names (say "the backend", "the frontend", not "Laravel", "React"), one plain sentence on why it matters. Tone matches severity but stays plain — a critical issue is still called critical.
 - **One-to-one mapping.** Every finding MUST have its layman pair — same ID, same order, nothing merged or dropped.
+- **SONE** — mark each finding `SONE: ✅` or `SONE: ❌` (see below).
+
+## SONE Fixes
+
+**SONE** = **S**traightforward, **O**bvious, **N**o-brainer, **E**ffortless. Findings that can be taken out quickly — no design debate, no cross-cutting impact.
+
+### SONE Criteria (all must hold)
+
+| Criterion | Meaning |
+|-----------|---------|
+| **Straightforward** | Single clear action. No ambiguity about what to change. |
+| **Obvious** | The correct fix is self-evident. No alternatives worth weighing. |
+| **No-brainer** | No trade-offs, no risk of breaking other things, nobody could reasonably object. |
+| **Effortless** | Low effort, small change, no new architecture, no new dependencies. |
+
+### SONE Examples
+
+- **Logs currently store PII** → take PII out of the logs completely; or recommend storing it somewhere else / in a different (anonymized/hashed) form.
+- **Missing input validation** → add the validation rule (FormRequest).
+- **Missing null check on a nullable input** → add the guard before the value is used.
+- **Hardcoded secret / debug flag left on** → remove it, move to env/config.
+- **Obvious rename / style issue** → rename it (P3 naming fixes are usually SONE).
+- **Use case registry out of sync with code** → update the affected use case in `docs/use-cases.md`. (Exception: if use cases haven't been generated yet, it's NOT SONE — flag, don't create a registry on the spot.)
+- Any finding with a single canonical fix that can't reasonably be objected to.
+
+### SONE Handling
+
+1. For SONE findings: present the fix AND offer to apply it immediately: "SONE — want me to take this one out now?"
+2. **Wait for explicit user approval. The STOP rule stands: NEVER auto-fix.**
+3. SONE fixes can be applied immediately, before the rest of the findings are addressed — the review list shrinks fast.
+4. Non-SONE findings keep the normal flow: fix → scoped `/review` re-check.
 
 ---
 
@@ -124,5 +159,8 @@ All P1/P2 fixed:
 
 Has outstanding P1:
 > "Review has [N] critical issues remaining. Fix them and run `/review` again."
+
+SONE findings approved:
+> "Taking out [N] SONE fix(es) now: [list of IDs]. Then re-check with `/review`."
 
 **⛔ STOP after presenting findings. Wait for user action.**
