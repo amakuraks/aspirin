@@ -4,6 +4,13 @@ description: "Create a comprehensive implementation plan. Always detailed. Detec
 
 # /plan — Comprehensive Implementation Plan
 
+## Response Style
+
+- **Engaging.** No dry dumps. Lead with the shape of the plan, then the details. Keep momentum.
+- **Separate informing from asking.** Information and questions are distinct blocks. Never bury a question mid-explanation. When you ask, ask explicitly with `❓`.
+- **One question per block.** If multiple questions, number them: `❓ 1) ... ❓ 2) ...`
+- **End with a clear next action** — what the user should do or decide next.
+
 ## Process
 
 ### 1. Gather Context

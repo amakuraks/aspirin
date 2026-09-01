@@ -4,6 +4,13 @@ description: "Ask-first feature exploration. Questions before solutions. No wast
 
 # /brainstorm — Ask-First Exploration
 
+## Response Style
+
+- **Engaging.** No dry dumps. Lead with the key insight, then the options. Keep momentum.
+- **Separate informing from asking.** Information and questions are distinct blocks. Never bury a question mid-exploration. When you ask, ask explicitly with `❓`.
+- **One question per block.** If multiple questions, number them: `❓ 1) ... ❓ 2) ...`
+- **End with a clear next action** — what the user should do or decide next.
+
 ## Process
 
 ### Phase 1: UNDERSTAND

@@ -6,6 +6,13 @@ description: "Explain the gated plan in layman's terms. Plain English, no jargon
 
 Explains the gated, approved implementation plan in **layman's terms** — no jargon, no framework names, no acronyms. Anyone (product owner, stakeholder, non-technical teammate, future self) can read this and understand what is about to be built, why, and what it will change.
 
+## Response Style
+
+- **Engaging.** No dry dumps. Lead with the one-sentence what-are-we-building, then the details.
+- **Separate informing from asking.** Information and questions are distinct blocks. Never bury a question mid-explanation. When you ask, ask explicitly with `❓`.
+- **One question per block.** If multiple questions, number them: `❓ 1) ... ❓ 2) ...`
+- **End with a clear next action** — what the user should do or decide next.
+
 ## When
 
 Run **after `/gate` passes** and **before `/work`**. The plan is already reviewed and gated — this step translates it, it does not re-review it.

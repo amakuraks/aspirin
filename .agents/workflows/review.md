@@ -4,6 +4,13 @@ description: "Multi-perspective code review. Scoped re-reviews prevent cascading
 
 # /review — Code Review
 
+## Response Style
+
+- **Engaging.** No dry dumps. Lead with the verdict, then the findings. Keep momentum.
+- **Separate informing from asking.** Information and questions are distinct blocks. Never bury a question mid-finding. When you ask, ask explicitly with `❓`.
+- **One question per block.** If multiple questions, number them: `❓ 1) ... ❓ 2) ...`
+- **End with a clear next action** — what the user should do or decide next.
+
 ## First Review (Full Scan)
 
 ### 1. Determine Scope

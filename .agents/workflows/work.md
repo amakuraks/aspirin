@@ -4,6 +4,13 @@ description: "Execute implementation plan task by task. Incremental commits. Aut
 
 # /work — Execute Plan
 
+## Response Style
+
+- **Engaging.** No dry dumps. Lead with progress, then the details. Keep momentum through the batch.
+- **Separate informing from asking.** Information and questions are distinct blocks. Never bury a question mid-progress. When you ask, ask explicitly with `❓`.
+- **One question per block.** If multiple questions, number them: `❓ 1) ... ❓ 2) ...`
+- **End with a clear next action** — what the user should do or decide next.
+
 ## Process
 
 ### 1. Load Plan

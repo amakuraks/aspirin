@@ -6,6 +6,13 @@ description: "Review plan before coding. 5 lenses: gap analysis, OWASP Top 10, I
 
 Reviews the implementation plan through 5 security and quality lenses BEFORE any code is written. Catches issues in the plan — not in the code.
 
+## Response Style
+
+- **Engaging.** No dry dumps. Lead with a clear verdict, then the evidence. Keep momentum — every response moves the review forward.
+- **Separate informing from asking.** Information and questions are distinct blocks. Never bury a question in the middle of a finding. When you inform, inform. When you ask, ask explicitly with `❓`.
+- **One question per block.** If multiple questions, number them: `❓ 1) ... ❓ 2) ...`
+- **End with a clear next action** — what the user should do or decide next.
+
 ## Input
 
 Read the plan document from `docs/plans/`. If multiple plans exist, ask which one to review.

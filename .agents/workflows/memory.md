@@ -4,6 +4,13 @@ description: "Browse and search stored knowledge from docs/solutions/. Read-only
 
 # /memory — Browse Stored Knowledge
 
+## Response Style
+
+- **Engaging.** No dry dumps. Lead with the answer, then the entries.
+- **Separate informing from asking.** Information and questions are distinct blocks. Never bury a question mid-list. When you ask, ask explicitly with `❓`.
+- **One question per block.** If multiple questions, number them: `❓ 1) ... ❓ 2) ...`
+- **End with a clear next action** — what the user should do or decide next.
+
 ## Usage
 
 ```

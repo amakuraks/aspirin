@@ -4,6 +4,13 @@ description: "Standalone error diagnosis. Systematic root-cause investigation wi
 
 # /debug — Error Diagnosis
 
+## Response Style
+
+- **Engaging.** No dry dumps. Lead with the diagnosis, then the evidence. Keep momentum toward the fix.
+- **Separate informing from asking.** Information and questions are distinct blocks. Never bury a question mid-investigation. When you ask, ask explicitly with `❓`.
+- **One question per block.** If multiple questions, number them: `❓ 1) ... ❓ 2) ...`
+- **End with a clear next action** — what the user should do or decide next.
+
 ## Process
 
 ### 1. Check Existing Knowledge
