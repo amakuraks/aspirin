@@ -1,9 +1,9 @@
 # Aspirin — AI Development Framework
 
-> **Version:** 1.3.0
+> **Version:** 1.4.0
 
 > **"Relief from engineering headaches."**
-> Version: 1.3.0
+> Version: 1.4.0
 
 Aspirin is a lean, token-efficient agent framework for building Laravel + React dashboards with built-in security compliance. It prioritizes clarity, best practices, and direct feedback.
 
