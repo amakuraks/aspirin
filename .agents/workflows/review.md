@@ -152,6 +152,15 @@ Without scoped re-reviews, each pass finds new issues → fixes → new issues �
 
 ---
 
+## Update Flow Chart
+
+After presenting findings, update the flow chart (see `flowchart` skill):
+
+- Read the flow from `docs/flows/` (if one exists for this feature).
+- For each P1/P2 finding that maps to a flow node, flag the node with `⚠️` (red) + a one-line note in the Gaps & Flaws table.
+- In a scoped re-review, clear `⚠️` markers for findings that are now fixed.
+- Render the updated chart inline.
+
 ## Auto-Compound
 
 If P1 critical issues were found and fixed:

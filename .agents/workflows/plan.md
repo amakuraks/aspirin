@@ -20,6 +20,7 @@ description: "Create a comprehensive implementation plan. Always detailed. Detec
 - If library/API docs needed → use `context7-docs` skill (before web search).
 - Check `docs/solutions/` for previously solved related problems.
 - Read `docs/use-cases.md` for existing use case registry.
+- Read the flow chart from `docs/flows/` (if exists) — the living diagram from `/brainstorm`.
 
 ### 2. Structure Check (Existing Codebases)
 
@@ -68,6 +69,12 @@ Each task must include:
 **Laravel task order:** Migration → Model → Service → Controller → Route → FormRequest
 **React task order:** Type/Interface → API Client → Hook → Component → Page → Route
 
+**Embed the flow chart** — read `docs/flows/` and refine it against the plan:
+- Insert any steps the plan adds that the chart is missing.
+- Clear `❓` markers on steps the plan now specifies.
+- Add `❓` markers + notes on any plan step that is still vague.
+- Render the updated chart inline in the plan.
+
 ### 4. Acceptance Criteria
 
 End the plan with clear acceptance criteria:
@@ -82,6 +89,7 @@ End the plan with clear acceptance criteria:
 ### 5. Save
 
 Write to `docs/plans/YYYY-MM-DD-<feature>-plan.md`
+Update flow chart at `docs/flows/<feature>-flow.md`
 
 ### ⛔ STOP
 

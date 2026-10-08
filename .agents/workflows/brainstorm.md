@@ -15,7 +15,7 @@ description: "Ask-first feature exploration. Questions before solutions. No wast
 
 ### Phase 1: UNDERSTAND
 
-1. **Print version** — display: `> 💊 Aspirin v1.4.0`
+1. **Print version** — display: `> 💊 Aspirin v1.5.0`
 2. Read the user's request.
 2. Scan codebase for relevant existing code, patterns, and conventions (if applicable).
 3. **Load use cases** — read `docs/use-cases.md` (if exists) to understand existing system behavior.
@@ -60,6 +60,10 @@ description: "Ask-first feature exploration. Questions before solutions. No wast
    - NEW: user two-factor authentication
    - REMOVED: (none)
    ```
+7. Generate the flow chart (see `flowchart` skill):
+   - Map the chosen option's flow to a Mermaid `flowchart TD`.
+   - Flag vague or unknown steps with `❓` (amber) + a one-line note in the Gaps & Flaws table.
+   - Render the chart inline.
 
 ### Phase 4: ENHANCEMENT OPPORTUNITIES
 
@@ -78,6 +82,7 @@ Gate: Wait for user response.
 ### Save
 
 Write brainstorm output to `docs/brainstorms/YYYY-MM-DD-<topic>.md`
+Write flow chart to `docs/flows/<topic>-flow.md`
 
 ### ⛔ STOP
 

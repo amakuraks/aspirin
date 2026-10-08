@@ -1,7 +1,7 @@
 # Aspirin 💊
 
 > **"Relief from engineering headaches."**
-> **Version 1.4.0**
+> **Version 1.5.0**
 
 Aspirin is a lean, token-efficient AI development framework for **Antigravity IDE**. Built for developers who build Laravel + React dashboards (and beyond), it enforces security compliance, best-practice architecture, and honest feedback — without the bloat.
 
@@ -15,6 +15,7 @@ Forked and reshaped from [Super Compound](https://github.com/aultramen/super-com
 |---------|-------------|
 | 💊 **Ask-First Brainstorming** | Questions before solutions. No wasted tokens on rejected paths. |
 | 📋 **Comprehensive Planning** | Always detailed. Detects messy code and includes restructuring. |
+| 🗺️ **Living Flow Chart** | A Mermaid diagram of the flow, updated across brainstorm → plan → gate → review. Gaps (`❓`) and flaws (`⚠️`) flagged directly on the chart. |
 | 🛡️ **Pre-Code Security Gate** | Review plans through OWASP Top 10, ISO 27001, gap analysis, and layered architecture — BEFORE writing code |
 | 🔒 **Scoped Re-Reviews** | First review is full scan. Re-reviews check ONLY fixed items — no cascading discovery |
 | 🧠 **Auto-Compound Knowledge** | Solved problems auto-save to `docs/solutions/` — no manual trigger needed |
@@ -72,7 +73,7 @@ your-project/
 │   │   ├── init.md              ← Project initialization (multi-stack)
 │   │   ├── debug.md             ← Standalone error diagnosis
 │   │   └── memory.md            ← Browse / search stored knowledge
-│   └── skills/                   ← Reusable capabilities (11 skills)
+│   └── skills/                   ← Reusable capabilities (12 skills)
 │       ├── brainstorming/        ← Ask-first brainstorming
 │       ├── writing-plans/        ← Comprehensive plan writing
 │       ├── executing-plans/      ← Plan execution with TDD
@@ -83,10 +84,12 @@ your-project/
 │       ├── systematic-debugging/ ← Root-cause debugging
 │       ├── verification/         ← Evidence before claims
 │       ├── tdd/                  ← Test-driven development
-│       └── context7-docs/        ← Library docs lookup
+│       ├── context7-docs/        ← Library docs lookup
+│       └── flowchart/            ← Living flow diagram (gaps + flaws)
 └── docs/
     ├── brainstorms/              ← Brainstorm outputs
     ├── plans/                    ← Implementation plans
+    ├── flows/                    ← Living Mermaid flow charts
     └── solutions/                ← Auto-compounded knowledge
 ```
 
@@ -219,6 +222,7 @@ Ask questions directly without invoking any workflow. The agent answers concisel
 | **verification** | Evidence-based completion — no claims without proof |
 | **tdd** | Test-driven development (strict / balanced / relaxed) |
 | **context7-docs** | Up-to-date library docs via Context7 MCP |
+| **flowchart** | Living flow diagram — gap/flaw hotspots flagged on the chart |
 
 ---
 
@@ -271,7 +275,7 @@ Violations are **P1 Critical** in code review.
 |--------|---------------|---------|
 | Rule files | 3 | **2** |
 | Workflows | 22 (15 + 7 redirects) | **9** (all unique) |
-| Skills | 27 | **11** |
+| Skills | 27 | **12** |
 | Agents | 5 | **0** |
 | Hooks | 3 | **0** |
 | Security review | Post-code only | **Pre-code** (`/gate`) |

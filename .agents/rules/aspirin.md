@@ -1,9 +1,9 @@
 # Aspirin — AI Development Framework
 
-> **Version:** 1.4.0
+> **Version:** 1.5.0
 
 > **"Relief from engineering headaches."**
-> Version: 1.4.0
+> Version: 1.5.0
 
 Aspirin is a lean, token-efficient agent framework for building Laravel + React dashboards with built-in security compliance. It prioritizes clarity, best practices, and direct feedback.
 
@@ -119,6 +119,10 @@ When a change requires modifying many files with the same pattern:
 | `/usecase` | Scan and maintain use case registry |
 | `/debug` | Standalone error diagnosis with auto-compound |
 | `/memory` | Browse / search stored knowledge |
+
+### Living Flow Chart
+
+A single Mermaid flowchart per feature lives at `docs/flows/<feature>-flow.md`. `/brainstorm` creates it; `/plan`, `/gate`, and `/review` update it. Nodes where a gap (`❓`) or flaw (`⚠️`) might form are flagged directly on the chart. See the `flowchart` skill.
 
 ---
 
@@ -256,6 +260,7 @@ Skills provide detailed instructions for specific capabilities. Check for applic
 | `code-review` | `/review` workflow |
 | `security-gate` | `/gate` workflow (OWASP + ISO 27001) |
 | `architecture-check` | `/gate` workflow + inline questions about structure |
+| `flowchart` | Living flow diagram — `/brainstorm`, `/plan`, `/gate`, `/review` |
 | `auto-compound` | Embedded in `/debug`, `/work`, `/review` |
 | `systematic-debugging` | `/debug` workflow |
 | `verification` | Before claiming any work is complete |

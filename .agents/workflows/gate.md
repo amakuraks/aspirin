@@ -159,6 +159,15 @@ Each block pairs technical detail with its layman translation:
 3. SONE fixes can be applied immediately, before the rest of the plan is patched — gate report shrinks fast.
 4. Non-SONE findings keep the normal flow: patch plan → re-run `/gate` (scoped).
 
+## Update Flow Chart
+
+After presenting findings, update the flow chart (see `flowchart` skill):
+
+- Read the flow from `docs/flows/` (if one exists for this feature).
+- For each finding that maps to a flow node, flag the node with `⚠️` (red) + a one-line note in the Gaps & Flaws table.
+- Plan-level findings not tied to a specific flow step stay in the gate report only — do not force them onto the chart.
+- Render the updated chart inline.
+
 ## Rules
 
 1. **NEVER auto-patch the plan** — including SONE fixes. Present findings and wait for user decision.
