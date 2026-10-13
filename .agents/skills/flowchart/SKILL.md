@@ -73,6 +73,7 @@ Marker rules:
 - **No crossing edges** — reorder nodes or split a sub-flow if a crossing is unavoidable.
 - **No edge through a node.**
 - **One purpose per node** — a node is one action, state, or decision. Split "Validate + Calculate + Save" into three.
+- **Keep labels short** — Mermaid does not auto-wrap node text, so long single-line labels render clipped in many renderers. Keep labels under ~30 chars. For longer labels, break manually with `<br/>` — `["Capability metadata<br/>24h cache"]` — or shorten the label (e.g. "24h cache" → "Cache (24h)").
 - **≤4 branches per decision** — more than that → extract a sub-flow.
 - **Backward edges only for intentional loops** (retry, re-validate). Mark them clearly.
 - **Keep the main flow ≤ ~15 nodes** — grow past that → parent flow + sub-flows.
